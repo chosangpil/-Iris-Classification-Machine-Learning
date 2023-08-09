@@ -71,6 +71,7 @@ for train_index, test_index in skfold.split(features, label):
     test_size = X_test.shape[0]
     print('\n#{0} 교차 검증 정확도 : {1}, 학습 데이터 크기 : {2}, 검증 데이터 크기 : {3}'.format(n_iter, accuracy, train_size, test_size))
     print('#{0} 검증 세트 인덱스 : {1}'.format(n_iter, test_index))
+    cv_accuracy.append(accuracy)
 
 # 교차 검증별 정확도 및 평균 정확도 계산
 print('\n ## 교차 검증별 정확도 : ', np.round(cv_accuracy, 4))
